@@ -62,9 +62,11 @@ namespace OneFactorInterestRateTree
                 System.Console.WriteLine("Choose from the following: ");
                 System.Console.WriteLine("1: Calibration of rate tree from cap premium");
                 System.Console.WriteLine("2: Calibration of rate tree from caplet premium");
-                System.Console.WriteLine("3: Set rate tree param");
-                System.Console.WriteLine("4: Debug mode");
-                System.Console.WriteLine("5: Bond pricing");
+                System.Console.WriteLine("3: Calibration of sigma from cap premium");
+                System.Console.WriteLine("4: Calibration of sigma from caplet premium");
+                System.Console.WriteLine("5: Set rate tree param");
+                System.Console.WriteLine("6: Debug mode");
+                System.Console.WriteLine("7: Bond pricing");
                 System.Console.WriteLine("0: Exit");
                 System.Console.WriteLine("Enter [1,2,3,4,5 or 0]: ");
 
@@ -92,7 +94,18 @@ namespace OneFactorInterestRateTree
                             System.Console.WriteLine();
                         }
                         break;
-                    case 3:
+                    case 4:
+                        System.Console.WriteLine("Enter param_a: ");
+                        double param_a_fixed = readDbl();
+
+                        rateTreeInput = new CalibrateRateTreeFromXMLInput(ratexml, rateModel, dtTree, tEndTree);
+                        foreach (string ccy in rateTreeInput.getCurrencyIDs())
+                        {
+                            OneFactorTrinomialShortRateTree tree = rateTreeInput.calibrateWithCapletAFixed(ccy, param_a_fixed);
+                            System.Console.WriteLine();
+                        }
+                        break;
+                    case 5:
                         System.Console.WriteLine("Enter param_a: ");
                         double param_a = readDbl();
                         System.Console.WriteLine("Enter param_s: ");
@@ -106,7 +119,7 @@ namespace OneFactorInterestRateTree
                             System.Console.WriteLine();
                         }
                         break;
-                    case 4:
+                    case 6:
                         // debug mode to analyze model
                         double my_a = 0.1;
                         double my_s = 0.01;
@@ -119,7 +132,7 @@ namespace OneFactorInterestRateTree
                             System.Console.WriteLine();
                         }
                         break;
-                    case 5:
+                    case 7:
 
                         List<string> ccyList = rateTreeInput.getCurrencyIDs();
 

@@ -67,6 +67,7 @@
     <Compile Include="BranchProb.cs" />
     <Compile Include="CalibrateRate1FWithCap.cs" />
     <Compile Include="CalibrateRate1FWithCaplet.cs" />
+    <Compile Include="CalibrateRate1FWithCapletAFixed.cs" />
     <Compile Include="CalibrateRateTreeFromXMLInput.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="InterestRateCapletModel.cs" />

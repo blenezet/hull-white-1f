@@ -161,6 +161,30 @@ namespace OneFactorInterestRateTree
 
         }
 
+        public OneFactorTrinomialShortRateTree calibrateWithCapletAFixed(string ccy, double paramA)
+        {
+            if (ccyID.Find(x => x == ccy) == null) throw new ArgumentException("Cannot find " + ccy + " info when building interest rate tree.");
+
+            if (treeDict.ContainsKey(ccy)) return treeDict[ccy];
+
+
+            List<Tuple<double, double>> zrInput;
+            List<Tuple<double, double, double>> capInput;
+            List<Tuple<double, bool, double, double>> capletInput;
+            double tStartCap;
+            double dtCap;
+            loadRateFile(ccy, out zrInput, out capInput, out tStartCap, out dtCap, out capletInput);
+
+            CalibrateRate1FWithCapletAFixed m = new CalibrateRate1FWithCapletAFixed(rateModel, ccy, dtTree, tEndTree, zrInput, capletInput, dtCap,paramA);
+            OneFactorTrinomialShortRateTree tree = m.calibrate();
+            treeDict[ccy] = tree;
+
+            calcStat(ccy, capInput, tStartCap, dtCap, capletInput, m.param_a, m.param_s, tree);
+            return treeDict[ccy];
+
+
+        }
+
         private void calcStat(string ccy, List<Tuple<double, double, double>> capInput, double tStartCap, double dtCap, List<Tuple<double, bool, double, double>> capletInput, double param_a, double param_s, OneFactorTrinomialShortRateTree tree)
         {
             System.Console.WriteLine(String.Format("{0} for {1}: a={2,6:f4} s={3,6:f4}", rateModel.ToString(), ccy, param_a, param_s));
