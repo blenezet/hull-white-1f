@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<RateTreeInput>
+	<EvaluationDate>2014-05-15</EvaluationDate>
+	<Currency id = "USD">
+		<YieldCurve>
+			<Tenor>1,2,3,4,5,6,7,8,9,10,11,12,15,20,25,30,40,50</Tenor>	
+			<ZeroRate>0.002545,0.0050721,0.0093085,0.0133154,0.0167937,0.0197113,0.0220818,0.0240687,0.0257589,0.0271769,0.0284009,0.0294532,0.0317454,0.0337747,0.0346537,0.0349814,0.0348355,0.0340782</ZeroRate>
+		</YieldCurve>
+		<Cap>
+			<FwdStartTenor>0.25</FwdStartTenor>
+			<PaymentPeriod>Q</PaymentPeriod>
+			<Tenor>3,4,5,7,10,15,20,25,30</Tenor>
+			<Strike>0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03</Strike>
+			<Premium>0.00244,0.00859,0.0165,0.0383,0.07671,0.13776,0.18935,0.23349,0.27198</Premium>
+		</Cap>
+		<Caplet>
+			<PaymentPeriod>Q</PaymentPeriod>
+			<Expiry>0.75,1.0,1.25,1.50,1.75,2.0,2.25,2.50,2.75,3.0</Expiry>
+			<Atm>true,true,true,true,true,true,true,true,true,true</Atm>
+			<Strike>0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03</Strike>
+			<Premium>0.00157686,0.00187635,0.00217878,0.00249109,0.00281683,0.00319746,0.00373466,0.00417504,0.00447428,0.00463086</Premium>
+		</Caplet>
+	</Currency>
+</RateTreeInput>
+

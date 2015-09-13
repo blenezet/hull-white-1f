@@ -1,0 +1,5 @@
+D:\visual studio 2010\Projects\HW1F\HW1F\bin\Debug\HW1F.exe
+D:\visual studio 2010\Projects\HW1F\HW1F\bin\Debug\HW1F.pdb
+D:\visual studio 2010\Projects\HW1F\HW1F\bin\Debug\alglibnet2.dll
+D:\visual studio 2010\Projects\HW1F\HW1F\obj\x86\Debug\HW1F.exe
+D:\visual studio 2010\Projects\HW1F\HW1F\obj\x86\Debug\HW1F.pdb

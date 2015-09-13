@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+    <BondInput>
+        <Bond id = "US67054LAA52">
+            <Name>NUMFP 4 7/8 05/15/19</Name>
+            <Description>1st Lien - 5NC2</Description>
+            <Currency>USD</Currency>
+            <IssueDate>2014-05-08</IssueDate>
+            <IsPerptual>F</IsPerptual>
+            <Maturity>2019-05-15</Maturity>
+            <Coupon>
+                <IsFloat>F</IsFloat>
+                <CpnRate>0.04875</CpnRate>
+                <CpnStart>2014-05-08</CpnStart>
+                <CpnPeriod>S</CpnPeriod>
+                <CpnEnd>2019-05-15</CpnEnd>
+            </Coupon>		
+			
+            <CallSchedule>
+                <CallDate>2016-05-15,2017-05-15,2018-05-15</CallDate>
+                <CallPrice>1.03656,1.01828,1.00000</CallPrice>
+            </CallSchedule>
+        </Bond>
+    </BondInput>
